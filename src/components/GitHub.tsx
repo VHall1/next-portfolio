@@ -1,4 +1,4 @@
-import { Text, Flex, Box } from "@chakra-ui/core";
+import { Text, Flex, Box, Link } from "@chakra-ui/core";
 import React from "react";
 import { FiBook, FiStar } from "react-icons/fi";
 import { RepoLanguage } from "./RepoLanguage";
@@ -20,16 +20,16 @@ export const GitHub: React.FC<GitHubProps> = ({
 }) => {
   return (
     <Flex direction="column" p={8} className="github-card">
-      <Flex alignItems="center">
-        <Box mt={1}>
-          <FiBook size={20} />
-        </Box>
-        <Text fontSize={25} ml={1}>
-          <a href={link} target="_blank">
+      <Link href={link} target="_blank">
+        <Flex alignItems="center">
+          <Box mt={1}>
+            <FiBook size={20} />
+          </Box>
+          <Text fontSize={25} ml={1}>
             {name}
-          </a>
-        </Text>
-      </Flex>
+          </Text>
+        </Flex>
+      </Link>
       <Text fontSize={19} my={5}>
         {description}
       </Text>

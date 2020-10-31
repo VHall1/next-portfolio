@@ -33,7 +33,7 @@ export async function getStaticProps() {
   );
   let fetchedPosts = await res.json();
 
-  fetchedPosts.filter((e: any) => {
+  fetchedPosts = fetchedPosts.filter((e: any) => {
     return e.language === "JavaScript" || e.language === "TypeScript";
   });
 

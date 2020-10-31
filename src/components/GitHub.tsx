@@ -3,11 +3,12 @@ import React from "react";
 import { FiBook, FiStar } from "react-icons/fi";
 import { RepoLanguage } from "./RepoLanguage";
 
-interface GitHubProps {
+export interface GitHubProps {
   name: string;
   description?: string;
   language: "JavaScript" | "TypeScript";
   stars: number;
+  link: string;
 }
 
 export const GitHub: React.FC<GitHubProps> = ({
@@ -15,6 +16,7 @@ export const GitHub: React.FC<GitHubProps> = ({
   description,
   language,
   stars,
+  link,
 }) => {
   return (
     <Flex direction="column" p={8} className="github-card">
@@ -23,13 +25,15 @@ export const GitHub: React.FC<GitHubProps> = ({
           <FiBook size={20} />
         </Box>
         <Text fontSize={25} ml={1}>
-          {name}
+          <a href={link} target="_blank">
+            {name}
+          </a>
         </Text>
       </Flex>
       <Text fontSize={19} my={5}>
         {description}
       </Text>
-      <Flex fontSize={13} mt="auto" my={3} alignItems="center">
+      <Flex fontSize={13} mt="auto" mb={3} alignItems="center">
         <RepoLanguage
           color={language === "TypeScript" ? "#2B7489" : undefined}
         />

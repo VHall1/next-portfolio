@@ -1,70 +1,57 @@
 import { Grid } from "@chakra-ui/core";
-import React, { useState } from "react";
-import { GitHub } from "../components/GitHub";
-import { NavBar } from "../components/navbar";
+import React from "react";
+import { GitHub, GitHubProps } from "../components/GitHub";
+import { NavBar } from "../components/NavBar";
 
-const Index = () => {
-  const [state, setstate] = useState([
-    {
-      name: "developerFolio",
-      description: "🔥 React + Github Issues 👉 Your Personal Blog",
-      stars: 259,
-      language: "JavaScript",
-    },
-    {
-      name: "developerFolio",
-      description: "🔥 React + Github Issues 👉 Your Personal Blog",
-      stars: 259,
-      language: "JavaScript",
-    },
-    {
-      name: "developerFolio",
-      description: "🔥 React + Github Issues 👉 Your Personal Blog",
-      stars: 259,
-      language: "JavaScript",
-    },
-    {
-      name: "developerFolio",
-      description: "🔥 React + Github Issues 👉 Your Personal Blog",
-      stars: 259,
-      language: "JavaScript",
-    },
-    {
-      name: "developerFolio",
-      description: "🔥 React + Github Issues 👉 Your Personal Blog",
-      stars: 259,
-      language: "JavaScript",
-    },
-    {
-      name: "developerFolio",
-      description: "🔥 React + Github Issues 👉 Your Personal Blog",
-      stars: 259,
-      language: "JavaScript",
-    },
-  ]);
+interface indexProps {
+  posts: GitHubProps[];
+}
 
-  // useEffect(() => {
-  //   fetch;
-  //   return () => {
-  //     cleanup;
-  //   };
-  // }, []);
-
+const Index: React.FC<indexProps> = ({ posts }) => {
   return (
     <>
       <NavBar />
       <Grid templateColumns="repeat(3, 1fr)" gap={4}>
-        {state.map(({ name, description, stars, language }, i) => (
+        {posts.map(({ name, description, stars, language, link }, i) => (
           <GitHub
             name={name}
             description={description}
             stars={stars}
             language={language}
+            link={link}
+            key={i}
           />
         ))}
       </Grid>
     </>
   );
 };
+
+export async function getStaticProps() {
+  const res = await fetch(
+    `https://api.github.com/users/${process.env.DB_USER_GIT}/repos`
+  );
+  let fetchedPosts = await res.json();
+
+  fetchedPosts.filter((e: any) => {
+    return e.language === "JavaScript" || e.language === "TypeScript";
+  });
+
+  const posts: GitHubProps = fetchedPosts.map((e: any) => {
+    return {
+      name: e.name,
+      description: e.description,
+      language: e.language,
+      stars: e.stargazers_count,
+      link: e.html_url,
+    };
+  });
+
+  return {
+    props: {
+      posts,
+    },
+  };
+}
 
 export default Index;

@@ -2,6 +2,7 @@ import { Grid } from "@chakra-ui/core";
 import React from "react";
 import { GitHub, GitHubProps } from "../components/GitHub";
 import { NavBar } from "../components/NavBar";
+import { fetchRepos } from "../utils/fetchGitRepos";
 
 interface indexProps {
   posts: GitHubProps[];
@@ -28,24 +29,7 @@ const Index: React.FC<indexProps> = ({ posts }) => {
 };
 
 export async function getStaticProps() {
-  const res = await fetch(
-    `https://api.github.com/users/${process.env.DB_USER_GIT}/repos`
-  );
-  let fetchedPosts = await res.json();
-
-  fetchedPosts = fetchedPosts.filter((e: any) => {
-    return e.language === "JavaScript" || e.language === "TypeScript";
-  });
-
-  const posts: GitHubProps = fetchedPosts.map((e: any) => {
-    return {
-      name: e.name,
-      description: e.description,
-      language: e.language,
-      stars: e.stargazers_count,
-      link: e.html_url,
-    };
-  });
+  const posts = fetchRepos();
 
   return {
     props: {

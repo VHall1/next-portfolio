@@ -1,14 +1,14 @@
-import { Box, Button, Flex, Text, Heading, useToast } from "@chakra-ui/core";
-import { Form, Formik } from "formik";
+import { Flex, Text, Heading } from "@chakra-ui/core";
+// import { Form, Formik } from "formik";
 import Head from "next/head";
 import React from "react";
 import { Footer } from "../components/Footer";
-import { InputField } from "../components/InputField";
+// import { InputField } from "../components/InputField";
 import { NavBar } from "../components/NavBar";
-import { TextField } from "../components/TextField";
+// import { TextField } from "../components/TextField";
 
 const Contact: React.FC = () => {
-  const toast = useToast();
+  // const toast = useToast();
 
   return (
     <>

@@ -20,12 +20,12 @@ const Portfolio: React.FC<portfolioProps> = ({ repos }) => {
       </Head>
       <Flex direction="column" height="100%">
         <NavBar />
-        <Flex direction="column" alignItems="center" mb={24}>
-          <Heading mx="auto" mt={24} fontSize="30px" fontWeight={600}>
-            GitHub Projects
+        <Flex w="100%" maxW="1180px" mx="auto" direction="column" mb={24}>
+          <Heading mt={24} fontSize="30px" fontWeight={600}>
+            GitHub Repositories
           </Heading>
-          <Flex w="100%" maxW="1180px" mx="auto" mb={8} mt={6}>
-            <Grid templateColumns="repeat(3, 1fr)" gap={4}>
+          <Flex mb={8} mt={6}>
+            <Grid w="100%" templateColumns="repeat(3, 1fr)" gap={4}>
               <Fade direction="up">
                 {repos?.map(
                   ({ name, description, stars, language, link }, index) => (
@@ -43,6 +43,7 @@ const Portfolio: React.FC<portfolioProps> = ({ repos }) => {
             </Grid>
           </Flex>
           <Flex
+            mx="auto"
             alignItems="center"
             className="up"
             onClick={() => window.open("https://github.com/vhall1", "_blank")}

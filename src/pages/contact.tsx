@@ -1,4 +1,4 @@
-import { Box, Button, Flex, Heading, useToast } from "@chakra-ui/core";
+import { Box, Button, Flex, Text, Heading, useToast } from "@chakra-ui/core";
 import { Form, Formik } from "formik";
 import Head from "next/head";
 import React from "react";
@@ -18,17 +18,11 @@ const Contact: React.FC = () => {
       <Flex direction="column" height="100%">
         <NavBar />
         <Flex direction="column" mx="auto" maxW="900px" w="100%" mb={24}>
-          <Heading
-            mx="auto"
-            fontWeight={600}
-            mt={24}
-            mb={8}
-            as="h1"
-            fontSize="30px"
-          >
-            Get In Touch
+          <Heading fontWeight={600} mt={24} mb={8} as="h1" fontSize="30px">
+            Contact
           </Heading>
-          <Box borderWidth="1px" rounded="lg" p={6} background="aliceBlue">
+          <Text>For al enquires, please email victorhallpsn@hotmail.com</Text>
+          {/* <Box borderWidth="1px" rounded="lg" p={6} background="aliceBlue">
             <Formik
               initialValues={{ name: "", email: "", subject: "", message: "" }}
               onSubmit={async (values, { setErrors }) => {
@@ -93,7 +87,7 @@ const Contact: React.FC = () => {
                 </Form>
               )}
             </Formik>
-          </Box>
+          </Box> */}
         </Flex>
         <Footer />
       </Flex>

@@ -7,7 +7,11 @@ export const NavBar: React.FC = () => {
     <Box borderWidth="1px" className="navbar">
       <Flex w="100%" maxW="1180px" mx="auto" px={8} py={6} alignItems="center">
         <NextLink href="/">
-          <Flex alignItems="center" className="logo">
+          <Flex
+            alignItems="center"
+            className="logo"
+            style={{ cursor: "pointer" }}
+          >
             <Avatar mr={3} size="sm" src="/me.jpeg" />
             <Text fontWeight={700} fontSize="xl">
               Victor Hall

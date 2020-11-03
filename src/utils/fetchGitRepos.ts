@@ -1,7 +1,7 @@
 import { GitHubProps } from "../components/GitHub";
 
-export async function fetchRepos(userUrl: string) {
-  const res = await fetch(`https://api.github.com/users/${userUrl}/repos`);
+export async function fetchRepos() {
+  const res = await fetch("https://api.github.com/users/vhall1/repos");
   let fetchedPosts = await res.json();
 
   fetchedPosts = fetchedPosts.filter((e: any) => {

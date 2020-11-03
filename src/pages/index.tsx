@@ -25,9 +25,9 @@ const Index: React.FC = () => {
             I develop web applications using React and a bunch of other stuff.
           </Text>
           <Flex justifyContent="center" mt={10}>
-            <Link href="/blog">
+            {/* <Link href="/blog">
               <div className="up">Blog</div>
-            </Link>
+            </Link> */}
             <Link href="/contact">
               <div className="up">Contact</div>
             </Link>

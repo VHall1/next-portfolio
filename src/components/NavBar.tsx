@@ -20,11 +20,11 @@ export const NavBar: React.FC = () => {
               Home
             </Box>
           </NextLink>
-          <NextLink href="/blog">
+          {/* <NextLink href="/blog">
             <Box className="css-custom-link" mr={6}>
               Blog
             </Box>
-          </NextLink>
+          </NextLink> */}
           <NextLink href="/contact">
             <Box className="css-custom-link" mr={6}>
               Contact

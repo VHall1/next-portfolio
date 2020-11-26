@@ -1,7 +1,7 @@
 import { Box, Flex } from "@chakra-ui/core";
 import React, { useEffect, useState } from "react";
 import { Cross as Hamburger } from "hamburger-react";
-import { Drawer } from "@material-ui/core";
+import { SwipeableDrawer } from "@material-ui/core";
 
 interface NavBarProps {
   hidden: boolean;
@@ -50,23 +50,23 @@ export const NavBar: React.FC<NavBarProps> = ({ hidden, handleScroll }) => {
               </Box>
             </>
           ) : (
-            <>
-              <Box ml="auto">
-                <Hamburger
-                  toggled={drawerStatus}
-                  toggle={toggleDrawer}
-                  size={20}
-                />
-              </Box>
-            </>
+            <Box ml="auto">
+              <Hamburger
+                toggled={drawerStatus}
+                toggle={toggleDrawer}
+                size={20}
+              />
+            </Box>
           )}
         </Flex>
       </Box>
-      <Drawer
+      <SwipeableDrawer
+        style={{ marginTop: "500px" }}
         id="drawer"
-        anchor="top"
+        anchor="right"
         open={drawerStatus}
         onClose={() => setDrawerStatus(false)}
+        onOpen={() => setDrawerStatus(true)}
       >
         <Box className="link" onClick={() => handleScroll("funnel")}>
           Home
@@ -77,7 +77,7 @@ export const NavBar: React.FC<NavBarProps> = ({ hidden, handleScroll }) => {
         <Box className="link" onClick={() => handleScroll("portfolio")}>
           Projects
         </Box>
-      </Drawer>
+      </SwipeableDrawer>
     </>
   );
 };

@@ -1,0 +1,23 @@
+#funnel {
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    text-align: center;
+    padding: 0 16px;
+    font-size: 1.5rem;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  #funnel {
+    h1 {
+      font-size: 4rem;
+    }
+
+    h2 {
+      font-size: 2.5rem;
+    }
+  }
+}

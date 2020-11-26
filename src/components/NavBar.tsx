@@ -1,44 +1,83 @@
-import { Avatar, Box, Flex, Text } from "@chakra-ui/core";
-import NextLink from "next/link";
-import React from "react";
+import { Box, Flex } from "@chakra-ui/core";
+import React, { useEffect, useState } from "react";
+import { Cross as Hamburger } from "hamburger-react";
+import { Drawer } from "@material-ui/core";
 
-export const NavBar: React.FC = () => {
+interface NavBarProps {
+  hidden: boolean;
+  handleScroll: (target: string) => void;
+}
+
+export const NavBar: React.FC<NavBarProps> = ({ hidden, handleScroll }) => {
+  const [screenWidth, setScreenWidth] = useState(0);
+  const [drawerStatus, setDrawerStatus] = useState(false);
+
+  const toggleDrawer = () => {
+    setDrawerStatus(!drawerStatus);
+  };
+
+  useEffect(() => {
+    const getWindowWidth = () => {
+      const { innerWidth: width } = window;
+      return width;
+    };
+
+    const handleResize = () => {
+      setScreenWidth(getWindowWidth());
+      setDrawerStatus(false);
+    };
+
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
-    <Box borderWidth="1px" className="navbar">
-      <Flex w="100%" maxW="1180px" mx="auto" px={8} py={6} alignItems="center">
-        <NextLink href="/">
-          <Flex
-            alignItems="center"
-            className="logo"
-            style={{ cursor: "pointer" }}
-          >
-            <Avatar mr={3} size="sm" src="/me.jpeg" />
-            <Text fontWeight={700} fontSize="xl">
-              Victor Hall
-            </Text>
-          </Flex>
-        </NextLink>
-        <Flex ml="auto" alignItems="center">
-          <NextLink href="/">
-            <Box className="css-custom-link" mr={6}>
-              Home
-            </Box>
-          </NextLink>
-          {/* <NextLink href="/blog">
-            <Box className="css-custom-link" mr={6}>
-              Blog
-            </Box>
-          </NextLink> */}
-          <NextLink href="/contact">
-            <Box className="css-custom-link" mr={6}>
-              Contact
-            </Box>
-          </NextLink>
-          <NextLink href="/portfolio">
-            <Box className="css-round-link">Portfolio</Box>
-          </NextLink>
+    <>
+      <Box id="navbar" className={`${hidden ? "hidden" : null}`}>
+        <Flex className="wrapper">
+          <Box className="link home" onClick={() => handleScroll("funnel")}>
+            👨‍💻 Victor
+          </Box>
+          {screenWidth > 768 ? (
+            <>
+              <Box className="link" onClick={() => handleScroll("funnel")}>
+                About
+              </Box>
+              <Box className="link" onClick={() => handleScroll("portfolio")}>
+                Projects
+              </Box>
+            </>
+          ) : (
+            <>
+              <Box ml="auto">
+                <Hamburger
+                  toggled={drawerStatus}
+                  toggle={toggleDrawer}
+                  size={20}
+                />
+              </Box>
+            </>
+          )}
         </Flex>
-      </Flex>
-    </Box>
+      </Box>
+      <Drawer
+        id="drawer"
+        anchor="top"
+        open={drawerStatus}
+        onClose={() => setDrawerStatus(false)}
+      >
+        <Box className="link" onClick={() => handleScroll("funnel")}>
+          Home
+        </Box>
+        <Box className="link" onClick={() => handleScroll("funnel")}>
+          About
+        </Box>
+        <Box className="link" onClick={() => handleScroll("portfolio")}>
+          Projects
+        </Box>
+      </Drawer>
+    </>
   );
 };

@@ -1,0 +1,40 @@
+#portfolio {
+  width: 100%;
+  max-width: $max-w;
+
+  margin: 0 auto;
+  padding: 32px 40px 0;
+
+  h1 {
+    color: $title;
+    font-size: 35.2px;
+    font-weight: 600;
+  }
+
+  h2 {
+    color: $title;
+    font-size: 24px;
+    font-weight: 600;
+  }
+
+  .cards-wrapper {
+    width: 100%;
+  }
+
+  .project-cards {
+    column-gap: 24px;
+    row-gap: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  #portfolio {
+    h2 {
+      text-align: center;
+    }
+
+    .project-cards {
+      grid-template-columns: 1fr;
+    }
+  }
+}

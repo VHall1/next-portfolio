@@ -42,9 +42,6 @@ export const NavBar: React.FC<NavBarProps> = ({ hidden, handleScroll }) => {
           </Box>
           {screenWidth > 768 ? (
             <>
-              <Box className="link" onClick={() => handleScroll("funnel")}>
-                About
-              </Box>
               <Box className="link" onClick={() => handleScroll("portfolio")}>
                 Projects
               </Box>
@@ -70,9 +67,6 @@ export const NavBar: React.FC<NavBarProps> = ({ hidden, handleScroll }) => {
       >
         <Box className="link" onClick={() => handleScroll("funnel")}>
           Home
-        </Box>
-        <Box className="link" onClick={() => handleScroll("funnel")}>
-          About
         </Box>
         <Box className="link" onClick={() => handleScroll("portfolio")}>
           Projects

@@ -1,21 +1,21 @@
 import { Box, Flex, Text } from "@chakra-ui/core";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Fade } from "react-awesome-reveal";
 import Head from "next/head";
 import Portfolio from "../components/Portfolio";
 import { NavBar } from "../components/NavBar";
 import { Footer } from "../components/Footer";
+import { NextPage } from "next";
 
-let scrollPos = 0;
-
-const handleAnchorScroll = (target: string) => {
-  const element = document.querySelector(`#${target}`);
-  element?.scrollIntoView({ behavior: "smooth", inline: "start" });
-};
-
-const Index: React.FC = () => {
+const Index: NextPage = () => {
   const [showNav, setShowNav] = useState(true);
 
+  const handleAnchorScroll = (target: string) => {
+    const element = document.querySelector(`#${target}`);
+    element?.scrollIntoView({ behavior: "smooth", inline: "start" });
+  };
+
+  let scrollPos = 0;
   const checkScrollPosition = () => {
     const currentScrollPos = window.pageYOffset;
     const visible = scrollPos > currentScrollPos;
@@ -48,7 +48,7 @@ const Index: React.FC = () => {
               Hey, I'm Victor 👨‍💻
             </Text>
             <Text mt={8} mx="auto" as="h2">
-              I'm a fullstack web developer and React enthusiast.
+              I'm a Fullstack Web Developer and a React enthusiast.
             </Text>
             <Flex justifyContent="center" mt={10}>
               <div

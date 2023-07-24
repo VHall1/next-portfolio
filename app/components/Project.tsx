@@ -1,14 +1,5 @@
-import { Flex, Button, Text } from "@chakra-ui/core";
 import React from "react";
 import { FiCodesandbox, FiGithub } from "react-icons/fi";
-
-export interface ProjectProps {
-  name: string;
-  description: string;
-  source: string;
-  demo: string;
-  image: string;
-}
 
 const Project: React.FC<ProjectProps> = ({
   name,
@@ -46,3 +37,11 @@ const Project: React.FC<ProjectProps> = ({
 };
 
 export default Project;
+
+export interface ProjectProps {
+  name: string;
+  description: string;
+  source: string;
+  demo: string;
+  image: string;
+}

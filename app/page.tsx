@@ -1,5 +1,6 @@
 import { Footer } from './components/footer';
 import { NavBar } from './components/navbar';
+import { Projects } from './components/projects';
 import { ProjectsButton } from './components/projects-button';
 import styles from './styles.module.scss';
 
@@ -13,8 +14,7 @@ export default function Page() {
           <h2>I'm a Full Stack Engineer and a React enthusiast</h2>
           <ProjectsButton />
         </div>
-
-        {/* <Portfolio /> */}
+        <Projects />
       </main>
       <Footer />
     </>

@@ -1,5 +1,3 @@
-'use client';
-
 import { FiGithub } from 'react-icons/fi';
 import { Project } from './project';
 import styles from './styles.module.scss';

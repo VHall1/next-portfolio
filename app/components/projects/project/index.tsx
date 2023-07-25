@@ -26,7 +26,6 @@ export const Project: React.FC<ProjectProps> = ({
         </a>
         <a
           className={`${styles.button} ${styles.sourceButton}`}
-          onClick={() => window.open(source, '_blank')}
           href={source}
           target="_blank"
           rel="noreferrer"

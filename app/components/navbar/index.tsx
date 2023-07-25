@@ -17,10 +17,16 @@ export const NavBar = () => {
           <a className={styles.link} onClick={() => handleScroll('funnel')}>
             👨‍💻 Victor
           </a>
-          <a className={styles.link} onClick={() => handleScroll('funnel')}>
+          <a
+            className={`${styles.link} ${styles.hideOnMobile}`}
+            onClick={() => handleScroll('funnel')}
+          >
             About
           </a>
-          <a className={styles.link} onClick={() => handleScroll('portfolio')}>
+          <a
+            className={`${styles.link} ${styles.hideOnMobile}`}
+            onClick={() => handleScroll('portfolio')}
+          >
             Projects
           </a>
         </div>
@@ -28,6 +34,16 @@ export const NavBar = () => {
         <div className={styles.hamburger}>
           <Hamburger toggled={drawerStatus} toggle={toggleDrawer} size={18} />
         </div>
+      </div>
+      <div
+        className={`${styles.drawer}${drawerStatus ? ` ${styles.show}` : ''}`}
+      >
+        <a className={styles.link} onClick={() => handleScroll('funnel')}>
+          About
+        </a>
+        <a className={styles.link} onClick={() => handleScroll('portfolio')}>
+          Projects
+        </a>
       </div>
     </header>
   );

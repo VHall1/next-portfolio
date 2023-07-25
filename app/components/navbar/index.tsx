@@ -17,18 +17,20 @@ export const NavBar = () => {
           <a className={styles.link} onClick={() => handleScroll('funnel')}>
             👨‍💻 Victor
           </a>
-          <a
-            className={`${styles.link} ${styles.hideOnMobile}`}
-            onClick={() => handleScroll('funnel')}
-          >
-            About
-          </a>
-          <a
-            className={`${styles.link} ${styles.hideOnMobile}`}
-            onClick={() => handleScroll('portfolio')}
-          >
-            Projects
-          </a>
+          {actions.map((action) => (
+            <a
+              key={`desktop-action-${action.name}`}
+              className={`${styles.link} ${styles.hideOnMobile}`}
+              {...(action.href
+                ? { href: action.href, target: '_blank', rel: 'noreferrer' }
+                : {})}
+              {...(action.scroll
+                ? { onClick: () => handleScroll(action.scroll!) }
+                : {})}
+            >
+              {action.name}
+            </a>
+          ))}
         </div>
 
         <div className={styles.hamburger}>
@@ -38,13 +40,40 @@ export const NavBar = () => {
       <div
         className={`${styles.drawer}${drawerStatus ? ` ${styles.show}` : ''}`}
       >
-        <a className={styles.link} onClick={() => handleScroll('funnel')}>
-          About
-        </a>
-        <a className={styles.link} onClick={() => handleScroll('portfolio')}>
-          Projects
-        </a>
+        {actions.map((action) => (
+          <a
+            key={`mobile-action-${action.name}`}
+            className={styles.link}
+            {...(action.href
+              ? { href: action.href, target: '_blank', rel: 'noreferrer' }
+              : {})}
+            {...(action.scroll
+              ? { onClick: () => handleScroll(action.scroll!) }
+              : {})}
+          >
+            {action.name}
+          </a>
+        ))}
       </div>
     </header>
   );
 };
+
+const actions: {
+  name: string;
+  scroll?: string;
+  href?: string;
+}[] = [
+  {
+    name: 'About',
+    scroll: 'funnel',
+  },
+  {
+    name: 'Projects',
+    scroll: 'portfolio',
+  },
+  {
+    name: 'Resume',
+    href: 'https://drive.google.com/file/d/1D-3Ajar5UYg1DTu3aOutZVk9c2t5cezc/view?usp=sharing',
+  },
+];

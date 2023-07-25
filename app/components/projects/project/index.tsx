@@ -19,6 +19,7 @@ export const Project: React.FC<ProjectProps> = ({
           className={`${styles.button} ${styles.demoButton}`}
           href={demo}
           target="_blank"
+          rel="noreferrer"
         >
           <FiCodesandbox />
           <span>Demo</span>
@@ -28,6 +29,7 @@ export const Project: React.FC<ProjectProps> = ({
           onClick={() => window.open(source, '_blank')}
           href={source}
           target="_blank"
+          rel="noreferrer"
         >
           <FiGithub />
           <span>Source</span>

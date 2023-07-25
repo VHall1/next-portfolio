@@ -11,6 +11,7 @@ export const Projects = () => {
       <div className={styles.grid}>
         {projects.map((project) => (
           <Project
+            key={project.source}
             name={project.name}
             image={project.image}
             description={project.description}

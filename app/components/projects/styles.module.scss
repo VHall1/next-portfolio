@@ -1,0 +1,54 @@
+@use '../../../styles/typography' as *;
+@use '../../../styles/variables' as *;
+@use '../../../styles/button' as *;
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  @include h4;
+  width: 100%;
+  max-width: $breakpoint-lg;
+  padding-left: 24px;
+  padding-right: 24px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 24px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  width: 100%;
+  max-width: $breakpoint-lg;
+  padding-left: 24px;
+  padding-right: 24px;
+  margin-left: auto;
+  margin-right: auto;
+
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.button {
+  @include btn;
+  @include btn-lg;
+  @include btn-special;
+
+  gap: 4px;
+  text-decoration: none;
+  margin-top: 64px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

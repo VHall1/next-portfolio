@@ -1,0 +1,34 @@
+@use '../styles/variables' as *;
+@use '../styles/typography' as *;
+
+.funnel {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  h1 {
+    @include display-2;
+    font-weight: 500;
+    margin-bottom: 32px;
+  }
+  h2 {
+    @include h2;
+    margin-bottom: 64px;
+  }
+}
+
+@media only screen and (max-width: $breakpoint-md) {
+  .funnel {
+    h1 {
+      @include h2;
+      margin-bottom: 16px;
+    }
+    h2 {
+      @include h4;
+      margin-bottom: 32px;
+    }
+  }
+}

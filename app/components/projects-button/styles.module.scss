@@ -1,0 +1,10 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/button' as *;
+
+.button {
+  @include btn;
+  @include btn-lg;
+  @include btn-special;
+
+  cursor: pointer;
+}

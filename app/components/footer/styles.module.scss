@@ -1,0 +1,19 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/typography' as *;
+
+.footer {
+  width: 100%;
+  position: absolute;
+  display: flex;
+  margin-top: 48px;
+  padding: 8px;
+  background-color: $color-primary;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  p {
+    margin-left: auto;
+    margin-right: auto;
+    @include body-3;
+  }
+}

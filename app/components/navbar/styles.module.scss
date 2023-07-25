@@ -28,6 +28,8 @@
   cursor: pointer;
   font-size: 18px;
   transition: color 0.25s cubic-bezier(0.25, 0.8, 0.25, 1);
+  color: inherit;
+  text-decoration: none;
   &:hover {
     color: $color-primary;
   }
@@ -54,6 +56,10 @@
   display: none;
   &.show {
     display: flex;
+  }
+  // never display on desktop
+  @media (min-width: $breakpoint-lg) {
+    display: none !important;
   }
 
   flex-direction: column;

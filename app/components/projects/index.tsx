@@ -28,12 +28,12 @@ export const Projects = () => {
 
 const projects = [
   {
-    name: '🔥 Firebase Chat',
-    image: '/firebase-chat.gif',
+    name: '🔥 FS Chat',
+    image: '/fs-chat.png',
     description:
-      'Chat with others in real-time. Built with React and Firebase. Hosted on Netlify',
-    source: 'https://github.com/VHall1/firebase-chat',
-    demo: 'https://condescending-lalande-a15c2d.netlify.app/',
+      'Chat with others in real-time. Built with React, TypeScript, WebSockets and Ruby on Rails. Hosted on Vercel',
+    source: 'https://github.com/VHall1/fs-chat',
+    demo: 'https://app.fs-chat.dev/',
   },
   {
     name: '📈 Expense Tracker',

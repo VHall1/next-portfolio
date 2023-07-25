@@ -1,21 +1,38 @@
 @use 'variables' as *;
 
 @mixin btn {
-  font-size: 14px;
-  font-weight: 600;
-  padding: 4px;
   display: flex;
   align-items: center;
+  font-size: 14px;
+  font-weight: 600;
+  padding-block: 4px;
+  padding-inline: 16px;
+  min-height: 40px;
 }
 
 @mixin btn-lg {
   font-size: 16px;
   font-weight: 600;
-  padding: 6px;
+  padding-block: 6px;
+  padding-inline: 24px;
+  min-height: 48px;
 }
 
 @mixin btn-primary {
+  color: #fff;
   background-color: $color-primary;
+  border-radius: $border-radius;
+}
+
+@mixin btn-neutral {
+  color: #fff;
+  background-color: $color-neutral;
+  border-radius: $border-radius;
+}
+
+@mixin btn-success {
+  color: #fff;
+  background-color: $color-success;
   border-radius: $border-radius;
 }
 

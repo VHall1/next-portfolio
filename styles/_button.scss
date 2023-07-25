@@ -1,0 +1,16 @@
+@mixin btn {
+  font-size: 14px;
+  font-weight: 600;
+  padding: 4px;
+}
+
+@mixin btn-lg {
+  font-size: 16px;
+  font-weight: 600;
+  padding: 6px;
+}
+
+@mixin btn-primary {
+  background-color: $color-primary;
+  border-radius: $border-radius;
+}

@@ -1,0 +1,51 @@
+@mixin display-1 {
+  font-size: 72px;
+  font-weight: 700;
+}
+
+@mixin display-2 {
+  font-size: 60px;
+  font-weight: 700;
+}
+
+@mixin h1 {
+  font-size: 48px;
+  font-weight: 600;
+}
+
+@mixin h2 {
+  font-size: 36px;
+  font-weight: 600;
+}
+
+@mixin h3 {
+  font-size: 30px;
+  font-weight: 500;
+}
+
+@mixin h4 {
+  font-size: 24px;
+  font-weight: 500;
+}
+
+@mixin h5 {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+@mixin h6 {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+@mixin body-1 {
+  font-size: 16px;
+}
+
+@mixin body-2 {
+  font-size: 14px;
+}
+
+@mixin body-3 {
+  font-size: 12px;
+}

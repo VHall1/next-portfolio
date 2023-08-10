@@ -51,4 +51,18 @@ const projects = [
     source: 'https://github.com/VHall1/react-weather',
     demo: 'https://vigilant-leakey-c36a17.netlify.app/',
   },
+  {
+    name: 'Tic Tac Toe',
+    description:
+      'Play the classic Tic-Tac-Toe game. Built with React, Vite and Tailwind. Tested with Cypress',
+    source: 'https://stackblitz.com/edit/vitejs-vite-19ndkp',
+    demo: 'https://stackblitz.com/edit/vitejs-vite-19ndkp',
+  },
+  {
+    name: 'Todo List',
+    description:
+      'Simple todo list app. Built with React, Vite, Redux and Tailwind. Tested with Cypress',
+    source: 'https://stackblitz.com/edit/vitejs-vite-bxxnm7',
+    demo: 'https://stackblitz.com/edit/vitejs-vite-bxxnm7',
+  },
 ];

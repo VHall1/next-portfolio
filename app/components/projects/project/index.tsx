@@ -10,7 +10,7 @@ export const Project: React.FC<ProjectProps> = ({
 }) => {
   return (
     <div className={styles.card}>
-      <img src={image} alt={name} className={styles.cardImg} />
+      {image ? <img src={image} alt={name} className={styles.cardImg} /> : null}
       <p className={styles.cardTitle}>{name}</p>
       <p className={styles.cardDescription}>{description}</p>
 
@@ -43,5 +43,5 @@ export interface ProjectProps {
   description: string;
   source: string;
   demo: string;
-  image: string;
+  image?: string;
 }

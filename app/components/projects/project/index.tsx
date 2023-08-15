@@ -1,5 +1,6 @@
 import { FiCodesandbox, FiGithub } from 'react-icons/fi';
 import styles from './styles.module.scss';
+import Image from 'next/image';
 
 export const Project: React.FC<ProjectProps> = ({
   name,
@@ -10,7 +11,11 @@ export const Project: React.FC<ProjectProps> = ({
 }) => {
   return (
     <div className={styles.card}>
-      {image ? <img src={image} alt={name} className={styles.cardImg} /> : null}
+      {image ? (
+        <div className={styles.cardImg}>
+          <Image src={image} alt={name} loading="lazy" decoding="async" fill />
+        </div>
+      ) : null}
       <p className={styles.cardTitle}>{name}</p>
       <p className={styles.cardDescription}>{description}</p>
 

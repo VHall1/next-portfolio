@@ -2,7 +2,7 @@
 
 import Hamburger from 'hamburger-react';
 import { useState } from 'react';
-import { handleScroll } from '../../utils/handle-scroll';
+import { handleScroll } from '@/util/handle-scroll';
 import styles from './styles.module.scss';
 
 export const NavBar = () => {

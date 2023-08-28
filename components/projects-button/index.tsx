@@ -1,6 +1,6 @@
 'use client';
 
-import { handleScroll } from '../../utils/handle-scroll';
+import { handleScroll } from '@/util/handle-scroll';
 import styles from './styles.module.scss';
 
 export const ProjectsButton = () => {

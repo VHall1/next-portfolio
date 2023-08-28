@@ -1,5 +1,5 @@
-@use '../../../styles/variables' as *;
-@use '../../../styles/button' as *;
+@use '../../styles/variables' as *;
+@use '../../styles/button' as *;
 
 .button {
   @include btn;

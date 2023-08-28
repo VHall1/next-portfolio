@@ -38,19 +38,19 @@ function getClassName({
   size?: ButtonProps['size'];
   variant?: ButtonProps['variant'];
 }) {
-  // <button type="button" class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Green</button>
-
   return clsx(
-    'focus:ring-4 font-medium rounded-md focus:outline-none',
+    'focus:outline-none focus:ring font-medium rounded-md',
     {
       // Variants
-      'text-white bg-blue-700 hover:bg-blue-800 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800':
+      'text-white bg-blue-700 hover:bg-blue-800 focus:ring-blue-300':
         variant === 'primary',
-      '1': variant === 'secondary',
-      '2': variant === 'error',
-      '3': variant === 'warning',
-      '5': variant === 'info',
-      'text-white bg-green-700 hover:bg-green-800 focus:ring-green-300':
+      'text-white bg-slate-600 hover:bg-slate-700 focus:ring-slate-300':
+        variant === 'secondary',
+      'text-white bg-red-700 hover:bg-red-800 focus:ring-red-500':
+        variant === 'error',
+      'text-white bg-amber-500 hover:bg-amber-600 focus:ring-amber-300':
+        variant === 'warning',
+      'text-white bg-green-700 hover:bg-green-800 focus:ring-green-500':
         variant === 'success',
       // Sizes
       'px-3 py-2 text-xs': size === 'xs',
@@ -64,7 +64,7 @@ function getClassName({
 }
 
 interface ButtonProps {
-  variant?: 'primary' | 'secondary' | 'error' | 'warning' | 'info' | 'success';
+  variant?: 'primary' | 'secondary' | 'error' | 'warning' | 'success';
   size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
 }
 

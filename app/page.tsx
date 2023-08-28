@@ -1,7 +1,7 @@
-import { Footer } from './components/footer';
-import { NavBar } from './components/navbar';
-import { Projects } from './components/projects';
-import { ProjectsButton } from './components/projects-button';
+import { Footer } from '@/components/footer';
+import { NavBar } from '@/components/navbar';
+import { Projects } from '@/components/projects';
+import { ProjectsButton } from '@/components/projects-button';
 import styles from './styles.module.scss';
 
 export default function Page() {

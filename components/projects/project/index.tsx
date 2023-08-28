@@ -1,7 +1,6 @@
 import { FiCodesandbox, FiGithub } from 'react-icons/fi';
 import styles from './styles.module.scss';
 import Image from 'next/image';
-import { Button } from '@/components/button';
 
 export const Project: React.FC<ProjectProps> = ({
   name,
@@ -21,7 +20,6 @@ export const Project: React.FC<ProjectProps> = ({
       <p className={styles.cardDescription}>{description}</p>
 
       <div className={styles.cardActions}>
-        <Button variant="success">test</Button>
         <a
           className={`${styles.button} ${styles.demoButton}`}
           href={demo}
